@@ -31,6 +31,11 @@ public class ChunkedUploadController {
      * - filename (String)
      */
 
+    @GetMapping("/test")
+    public String test() {
+        return "test";
+    }
+
     @PostMapping(value = "/chunk", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public Mono<Map<String, Object>> uploadChunk(
             @RequestPart("chunk") Mono<FilePart> chunkMono,
